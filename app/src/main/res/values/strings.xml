@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FacebookPublisher</string>
+
+    /*String resources de Facebook*/
+    <string name="facebook_app_id">1881074902061707</string>
+    <string name="fb_login_protocol_scheme">fb1881074902061707</string>
+    <string name="btnEnlace">Compartir enlace</string>
+    <string name="btnImagen">Publicar imagen</string>
+</resources>
