@@ -7,8 +7,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Log;
@@ -27,7 +29,11 @@ import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -116,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         /*Boton para compartir imagen*/
         btnImagen = findViewById(R.id.btnImagen);
         btnImagen.setOnClickListener(v -> {
-            selectImage(this);
+            abrirGaleria();
         });
 
     }
@@ -126,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(gallery, PICK_IMAGE);
     }
 
-    private void selectImage(Context context) {
+    /*private void selectImage(Context context) {
         final CharSequence[] options = { "Tomar foto", "Escoger de la galería","Cancelar" };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -151,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         builder.show();
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
